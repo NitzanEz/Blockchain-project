@@ -8,11 +8,6 @@ function generate_seed() {
 
 var total_addresses = 0;
 
-/* Generates addresses based on the given seed phrase.
-   If no seed is provided, uses the seed value from the seed element in the HTML.
-   Validates the seed phrase and prompts the user for the number of addresses to generate.
-   Displays the generated addresses, private keys, and balances in a list.
-*/
 function generate_addresses(seed) {
     if (seed == undefined) {
         seed = document.getElementById("seed").value;
@@ -104,11 +99,6 @@ function generate_addresses(seed) {
     );
 }
 
-/* Sends a signed transaction between accounts.
-   Requires a 12-word seed phrase to be entered into the info textbox.
-   Uses the seed phrase to create a new address for the 'from' field.
-   Sends the specified amount of ARB to the 'to' address.
-*/
 function send_ether() {
     var seed = global_seed;
     if (seed == undefined) {
